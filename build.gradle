@@ -1,0 +1,31 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        maven {
+            url("https://plugins.gradle.org/m2/")
+        }
+        dependencies {
+            classpath("net.ltgt.gradle:gradle-apt-plugin:0.9")
+        }
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'net.ltgt.apt'
+
+jar {
+    baseName = 'broken-sample'
+    version = '0.0.1-SNAPSHOT'
+}
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly('org.immutables:value:2.2.10:annotations')
+    apt('org.immutables:value:2.2.10')
+}
