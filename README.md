@@ -1,4 +1,4 @@
-# intellij-annotation-processors-problem
+# IntelliJ, Gradle & Annotation Processors
 
 ## Build with gradew
 
